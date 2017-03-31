@@ -1,0 +1,65 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="10dp"
+    android:fillViewport="false">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Halo, User." />
+
+        <Button
+            android:id="@+id/button1"
+            android:layout_width="match_parent"
+            android:layout_height="73dp"
+            android:paddingLeft="20dp"
+            android:drawableLeft="@drawable/icon1"
+            android:gravity="left|center_vertical"
+            android:text="   PENCAPAIAN" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="match_parent"
+            android:layout_height="73dp"
+            android:paddingLeft="20dp"
+            android:drawableLeft="@drawable/icon1"
+            android:gravity="left|center_vertical"
+            android:text="  TARGET HARIAN" />
+
+        <Button
+            android:id="@+id/button3"
+            android:layout_width="match_parent"
+            android:layout_height="73dp"
+            android:paddingLeft="20dp"
+            android:drawableLeft="@drawable/icon1"
+            android:gravity="left|center_vertical"
+            android:text="  RAPOR" />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="match_parent"
+            android:layout_height="73dp"
+            android:paddingLeft="20dp"
+            android:drawableLeft="@drawable/icon1"
+            android:gravity="left|center_vertical"
+            android:text="  SETTING" />
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="match_parent"
+            android:layout_height="73dp"
+            android:paddingLeft="20dp"
+            android:drawableLeft="@drawable/icon1"
+            android:gravity="left|center_vertical"
+            android:text="  ABOUT" />
+
+    </LinearLayout>
+</ScrollView>
