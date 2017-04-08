@@ -1,0 +1,54 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="layout.TargetPage">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
+
+            <TextView
+                android:id="@+id/textView6"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_weight="0.12"
+                android:layout_marginLeft="15dp"
+                android:gravity="center_vertical"
+                android:text="Ibadah" />
+
+            <TextView
+                android:id="@+id/textView7"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_weight="0.12"
+                android:gravity="center_vertical"
+                android:text="Kuantitas" />
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="wrap_content"
+                android:layout_height="30dp"
+                android:layout_weight="0.04"
+                android:gravity="center_vertical"
+                android:text="Edit" />
+
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/listTarget"
+            android:layout_width="match_parent"
+            android:layout_marginTop="30dp"
+            android:layout_height="480dp"/>
+
+    </RelativeLayout>
+
+</FrameLayout>

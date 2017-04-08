@@ -16,18 +16,31 @@
         android:screenOrientation="portrait"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MenuActivity" />
+        <activity
+            android:name=".MenuActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".SplashActivity"
             android:noHistory="true"
-            android:theme="@style/FullScreen">
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".LoginActivity"></activity>
+        <activity
+            android:name=".LoginActivity"
+            android:noHistory="true" />
+        <activity android:name=".AboutActivity" />
+        <activity android:name=".ThemeActivity" />
+        <activity android:name=".ChartActivity" />
+        <activity android:name=".UserActivity" />
+        <activity android:name=".NotifActivity"></activity>
     </application>
 
 </manifest>

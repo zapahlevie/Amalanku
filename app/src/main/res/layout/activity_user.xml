@@ -6,7 +6,7 @@
     tools:context="com.avengers.amalku.amalanku.LoginActivity">
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/editText2"
         android:layout_width="220dp"
         android:layout_height="wrap_content"
         android:ems="10"
@@ -15,13 +15,13 @@
         android:hint="Nama Lengkap"
         tools:layout_editor_absoluteX="86dp"
         tools:layout_editor_absoluteY="305dp"
-        android:layout_marginTop="19dp"
-        android:layout_below="@+id/imageButton"
-        android:layout_alignLeft="@+id/imageButton"
-        android:layout_alignStart="@+id/imageButton" />
+        android:layout_marginTop="22dp"
+        android:layout_below="@+id/imageButton2"
+        android:layout_alignLeft="@+id/imageButton2"
+        android:layout_alignStart="@+id/imageButton2" />
 
     <ImageButton
-        android:id="@+id/imageButton"
+        android:id="@+id/imageButton2"
         android:layout_width="220dp"
         android:layout_height="220dp"
         android:scaleType="fitXY"
@@ -35,15 +35,15 @@
         android:onClick="openGallery"/>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/button6"
         android:layout_width="220dp"
         android:layout_height="46dp"
-        android:text="Masuk"
+        android:text="Simpan"
         tools:layout_editor_absoluteX="86dp"
         tools:layout_editor_absoluteY="362dp"
-        android:layout_below="@+id/editText"
-        android:layout_alignLeft="@+id/imageButton"
-        android:layout_alignStart="@+id/imageButton"
-        android:onClick="openMain"/>
+        android:onClick="saveUser"
+        android:layout_below="@+id/editText2"
+        android:layout_alignLeft="@+id/editText2"
+        android:layout_alignStart="@+id/editText2" />
 
 </RelativeLayout>

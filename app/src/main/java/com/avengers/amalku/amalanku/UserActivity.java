@@ -1,9 +1,10 @@
 package com.avengers.amalku.amalanku;
 
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.database.Cursor;
-import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.provider.MediaStore;
 import android.support.v4.graphics.drawable.RoundedBitmapDrawable;
@@ -19,11 +20,9 @@ import android.widget.EditText;
 import android.widget.ImageButton;
 import android.widget.Toast;
 
-import layout.HomePage;
+public class UserActivity extends AppCompatActivity {
 
-public class LoginActivity extends AppCompatActivity {
-
-    private static int RESULT_LOAD_IMG = 1;
+    private static final int RESULT_LOAD_IMG = 1;
     String imgDecodableString;
     EditText edit1;
     Button button1;
@@ -36,10 +35,17 @@ public class LoginActivity extends AppCompatActivity {
         if(useDarkTheme) {
             setTheme(R.style.AppTheme_Dark);
         }
-        setContentView(R.layout.activity_login);
-        edit1 = (EditText) findViewById(R.id.editText);
-        button1 =(Button) findViewById(R.id.button);
-        button1.setEnabled(false);
+        setContentView(R.layout.activity_user);
+
+        edit1 = (EditText) findViewById(R.id.editText2);
+        button1 =(Button) findViewById(R.id.button6);
+
+        Bundle b = getIntent().getExtras();
+        String username = "User";
+        if(b != null)
+            username = b.getString("username");
+        edit1.setText(username);
+
         edit1.setFocusableInTouchMode(true);
         edit1.requestFocus();
         edit1.setOnKeyListener(new View.OnKeyListener() {
@@ -73,18 +79,26 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 
-    public void openMain(View view) {
-        edit1 = (EditText) findViewById(R.id.editText);
-        Intent i = new Intent(LoginActivity.this, MenuActivity.class);
-        Bundle b = new Bundle();
-        b.putString("username", edit1.getText().toString());
-        HomePage fragInfo = new HomePage();
-        fragInfo.setArguments(b);
-        i.putExtras(b);
-        startActivity(i);
-
+    public void saveUser(View view){
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setMessage("Apakah anda yakin ingin keluar?")
+                .setTitle("Konfirmasi")
+                .setPositiveButton("Ya", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.dismiss();
+                        // CONFIRM
+                    }
+                })
+                .setNegativeButton("Batal", new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int id) {
+                        dialog.dismiss();
+                        // CANCEL
+                    }
+                });
+        // Create the AlertDialog object and return it
+        AlertDialog alert =  builder.create();
+        alert.show();
     }
-
     public void openGallery(View view) {
         Intent galleryIntent = new Intent(Intent.ACTION_PICK, android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
         startActivityForResult(galleryIntent, RESULT_LOAD_IMG);
@@ -118,7 +132,7 @@ public class LoginActivity extends AppCompatActivity {
                 int columnIndex = cursor.getColumnIndex(filePathColumn[0]);
                 imgDecodableString = cursor.getString(columnIndex);
                 cursor.close();
-                ImageButton imgb = (ImageButton) findViewById(R.id.imageButton);
+                ImageButton imgb = (ImageButton) findViewById(R.id.imageButton2);
                 // Set the Image in ImageView after decoding the String
                 RoundedBitmapDrawable roundedBitmapDrawable = RoundedBitmapDrawableFactory.create(getResources(), imgDecodableString);
                 roundedBitmapDrawable.setCircular(true);
